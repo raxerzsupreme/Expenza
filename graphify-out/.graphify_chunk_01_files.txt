@@ -1,0 +1,3 @@
+/var/home/Instigo/F/Files/Project/Expenza/expenza/AGENTS.md
+/var/home/Instigo/F/Files/Project/Expenza/expenza/CLAUDE.md
+/var/home/Instigo/F/Files/Project/Expenza/expenza/README.md

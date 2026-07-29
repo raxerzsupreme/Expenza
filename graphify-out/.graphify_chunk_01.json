@@ -1,0 +1,271 @@
+{
+  "nodes": [
+    {
+      "id": "expenza_agents_md_agent_rules",
+      "label": "Agent Rules (AGENTS.md)",
+      "file_type": "document",
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/AGENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "expenza_claude_md_claude_config",
+      "label": "Claude Configuration (CLAUDE.md)",
+      "file_type": "document",
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "expenza_readme_md_project_overview",
+      "label": "Project README",
+      "file_type": "document",
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "expenza_agents_md_nextjs_breaking_changes",
+      "label": "Next.js Breaking Changes Warning",
+      "file_type": "rationale",
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/AGENTS.md",
+      "source_location": "AGENTS.md:3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "expenza_agents_md_node_modules_docs",
+      "label": "Next.js Agent Documentation Path",
+      "file_type": "concept",
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/AGENTS.md",
+      "source_location": "AGENTS.md:4",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "expenza_readme_md_nextjs_framework",
+      "label": "Next.js Framework",
+      "file_type": "concept",
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/README.md",
+      "source_location": "README.md:1",
+      "source_url": "https://nextjs.org",
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "expenza_readme_md_create_next_app",
+      "label": "create-next-app CLI",
+      "file_type": "concept",
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/README.md",
+      "source_location": "README.md:1",
+      "source_url": "https://nextjs.org/docs/app/api-reference/cli/create-next-app",
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "expenza_readme_md_vercel_platform",
+      "label": "Vercel Deployment Platform",
+      "file_type": "concept",
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/README.md",
+      "source_location": "README.md:34",
+      "source_url": "https://vercel.com/new",
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "expenza_readme_md_geist_font",
+      "label": "Geist Font Family",
+      "file_type": "concept",
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/README.md",
+      "source_location": "README.md:21",
+      "source_url": "https://vercel.com/font",
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "expenza_agents_md_read_guides_first",
+      "label": "Read Guides Before Coding Principle",
+      "file_type": "rationale",
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/AGENTS.md",
+      "source_location": "AGENTS.md:4",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "expenza_claude_md_claude_config",
+      "target": "expenza_agents_md_agent_rules",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/CLAUDE.md",
+      "source_location": "CLAUDE.md:1",
+      "weight": 1.0
+    },
+    {
+      "source": "expenza_agents_md_agent_rules",
+      "target": "expenza_agents_md_nextjs_breaking_changes",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/AGENTS.md",
+      "source_location": "AGENTS.md:3",
+      "weight": 1.0
+    },
+    {
+      "source": "expenza_agents_md_agent_rules",
+      "target": "expenza_agents_md_node_modules_docs",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/AGENTS.md",
+      "source_location": "AGENTS.md:4",
+      "weight": 1.0
+    },
+    {
+      "source": "expenza_agents_md_agent_rules",
+      "target": "expenza_agents_md_read_guides_first",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/AGENTS.md",
+      "source_location": "AGENTS.md:4",
+      "weight": 1.0
+    },
+    {
+      "source": "expenza_readme_md_project_overview",
+      "target": "expenza_readme_md_nextjs_framework",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/README.md",
+      "source_location": "README.md:1",
+      "weight": 1.0
+    },
+    {
+      "source": "expenza_readme_md_project_overview",
+      "target": "expenza_readme_md_create_next_app",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/README.md",
+      "source_location": "README.md:1",
+      "weight": 1.0
+    },
+    {
+      "source": "expenza_readme_md_project_overview",
+      "target": "expenza_readme_md_vercel_platform",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/README.md",
+      "source_location": "README.md:34",
+      "weight": 1.0
+    },
+    {
+      "source": "expenza_readme_md_project_overview",
+      "target": "expenza_readme_md_geist_font",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/README.md",
+      "source_location": "README.md:21",
+      "weight": 1.0
+    },
+    {
+      "source": "expenza_readme_md_nextjs_framework",
+      "target": "expenza_readme_md_create_next_app",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/README.md",
+      "source_location": "README.md:1",
+      "weight": 1.0
+    },
+    {
+      "source": "expenza_readme_md_nextjs_framework",
+      "target": "expenza_readme_md_vercel_platform",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/README.md",
+      "source_location": "README.md:34",
+      "weight": 1.0
+    },
+    {
+      "source": "expenza_agents_md_nextjs_breaking_changes",
+      "target": "expenza_agents_md_read_guides_first",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/AGENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "expenza_readme_md_project_overview",
+      "target": "expenza_agents_md_agent_rules",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/README.md",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "hyperedge_01_nextjs_project_setup",
+      "label": "Next.js Project Bootstrap and Deployment",
+      "nodes": [
+        "expenza_readme_md_nextjs_framework",
+        "expenza_readme_md_create_next_app",
+        "expenza_readme_md_vercel_platform"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "id": "hyperedge_02_agent_safety_workflow",
+      "label": "Agent Safety and Documentation Workflow",
+      "nodes": [
+        "expenza_agents_md_agent_rules",
+        "expenza_agents_md_nextjs_breaking_changes",
+        "expenza_agents_md_node_modules_docs",
+        "expenza_agents_md_read_guides_first"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/var/home/Instigo/F/Files/Project/Expenza/expenza/AGENTS.md",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

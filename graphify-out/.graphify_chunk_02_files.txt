@@ -1,0 +1,5 @@
+/var/home/Instigo/F/Files/Project/Expenza/expenza/public/file.svg
+/var/home/Instigo/F/Files/Project/Expenza/expenza/public/globe.svg
+/var/home/Instigo/F/Files/Project/Expenza/expenza/public/next.svg
+/var/home/Instigo/F/Files/Project/Expenza/expenza/public/vercel.svg
+/var/home/Instigo/F/Files/Project/Expenza/expenza/public/window.svg
