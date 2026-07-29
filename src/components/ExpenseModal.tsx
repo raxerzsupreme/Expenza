@@ -36,6 +36,8 @@ export function ExpenseModal() {
   const [note, setNote] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const selectedCategory = categories.find((c) => c.id?.toString() === categoryId);
+
   useEffect(() => {
     if (editingExpense) {
       setAmount(editingExpense.amount.toString());
@@ -123,7 +125,17 @@ export function ExpenseModal() {
               </label>
               <Select value={categoryId} onValueChange={(v) => setCategoryId(v || '')}>
                 <SelectTrigger>
-                  <SelectValue placeholder="Select a category" />
+                  {selectedCategory ? (
+                    <div className="flex items-center gap-2">
+                      <div
+                        className="h-3 w-3 rounded-full"
+                        style={{ backgroundColor: selectedCategory.color }}
+                      />
+                      {selectedCategory.name}
+                    </div>
+                  ) : (
+                    <span className="text-muted-foreground">Select a category</span>
+                  )}
                 </SelectTrigger>
                 <SelectContent>
                   {categories.map((cat) => (
