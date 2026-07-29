@@ -83,10 +83,7 @@ export default function ExpensesPage() {
             {filteredExpenses.length} expenses · ${totalFiltered.toFixed(2)} total
           </p>
         </div>
-        <Button 
-          onClick={() => openExpenseModal()}
-          className="bg-gradient-to-r from-violet-600 to-purple-600 text-white shadow-md shadow-violet-500/25 hover:from-violet-700 hover:to-purple-700"
-        >
+        <Button onClick={() => openExpenseModal()}>
           <Plus className="mr-2 h-4 w-4" />
           Add Expense
         </Button>

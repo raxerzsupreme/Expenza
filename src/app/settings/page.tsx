@@ -179,8 +179,8 @@ export default function SettingsPage() {
         <Card>
           <CardHeader>
             <div className="flex items-center gap-3">
-              <div className="rounded-lg bg-gradient-to-br from-violet-600 to-purple-600 p-2">
-                <Wallet className="h-5 w-5 text-white" />
+              <div className="rounded-md bg-secondary p-2">
+                <Wallet className="h-5 w-5 text-primary" />
               </div>
               <div>
                 <CardTitle>Expenza</CardTitle>
@@ -204,12 +204,12 @@ export default function SettingsPage() {
           </CardHeader>
           <CardContent>
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-lg border border-violet-200 bg-violet-50 p-4 dark:border-violet-800 dark:bg-violet-950/30">
-                <p className="text-2xl font-bold text-violet-600 dark:text-violet-400">{expenses.length}</p>
+              <div className="rounded-md border bg-secondary/50 p-4">
+                <p className="text-2xl font-bold">{expenses.length}</p>
                 <p className="text-sm text-muted-foreground">Expenses</p>
               </div>
-              <div className="rounded-lg border border-purple-200 bg-purple-50 p-4 dark:border-purple-800 dark:bg-purple-950/30">
-                <p className="text-2xl font-bold text-purple-600 dark:text-purple-400">{categories.length}</p>
+              <div className="rounded-md border bg-secondary/50 p-4">
+                <p className="text-2xl font-bold">{categories.length}</p>
                 <p className="text-sm text-muted-foreground">Categories</p>
               </div>
             </div>
@@ -226,21 +226,20 @@ export default function SettingsPage() {
             <div className="grid gap-3 sm:grid-cols-3">
               <Button 
                 onClick={handleExportCSV}
-                className="w-full bg-gradient-to-r from-violet-600 to-purple-600 text-white shadow-md shadow-violet-500/25 hover:from-violet-700 hover:to-purple-700"
+                variant="outline"
               >
                 <Download className="mr-2 h-4 w-4" />
                 Export CSV
               </Button>
               <Button 
                 onClick={handleExportJSON}
-                className="w-full bg-gradient-to-r from-violet-600 to-purple-600 text-white shadow-md shadow-violet-500/25 hover:from-violet-700 hover:to-purple-700"
+                variant="outline"
               >
                 <Download className="mr-2 h-4 w-4" />
                 Export JSON
               </Button>
               <Button 
                 onClick={handleExportExcel}
-                className="w-full bg-gradient-to-r from-violet-600 to-purple-600 text-white shadow-md shadow-violet-500/25 hover:from-violet-700 hover:to-purple-700"
               >
                 <FileSpreadsheet className="mr-2 h-4 w-4" />
                 Export Excel
@@ -257,7 +256,7 @@ export default function SettingsPage() {
           </CardHeader>
           <CardContent>
             <div className="flex items-center gap-4">
-              <label className="inline-flex h-9 items-center justify-center gap-2 rounded-lg border border-purple-200 bg-purple-50 px-4 text-sm font-medium text-purple-700 transition-colors hover:bg-purple-100 cursor-pointer dark:border-purple-800 dark:bg-purple-950/30 dark:text-purple-300 dark:hover:bg-purple-900/50">
+              <label className="inline-flex h-9 items-center justify-center gap-2 rounded-md border bg-background px-4 text-sm font-medium transition-colors hover:bg-muted cursor-pointer">
                 <Upload className="h-4 w-4" />
                 Import JSON
                 <input
