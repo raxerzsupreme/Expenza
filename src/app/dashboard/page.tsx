@@ -1,16 +1,19 @@
 'use client';
 
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Plus } from 'lucide-react';
+import { Plus, Target } from 'lucide-react';
 import { DashboardStats } from '@/components/DashboardStats';
 import { SpendingCharts } from '@/components/SpendingCharts';
 import { RecentTransactions } from '@/components/RecentTransactions';
 import { ExpenseModal } from '@/components/ExpenseModal';
+import { BudgetModal } from '@/components/BudgetModal';
 import { useAppStore } from '@/lib/store';
 import { motion } from 'motion/react';
 
 export default function DashboardPage() {
   const openExpenseModal = useAppStore((s) => s.openExpenseModal);
+  const [isBudgetModalOpen, setIsBudgetModalOpen] = useState(false);
 
   return (
     <div className="container mx-auto px-4 sm:px-6 py-8 max-w-6xl">
@@ -26,10 +29,23 @@ export default function DashboardPage() {
             Track your spending and stay on budget.
           </p>
         </div>
-        <Button onClick={() => openExpenseModal()}>
-          <Plus className="mr-2 h-4 w-4" />
-          Add Expense
-        </Button>
+        <div className="flex items-center gap-3">
+          <Button
+            variant="outline"
+            onClick={() => setIsBudgetModalOpen(true)}
+            className="border-slate-300 hover:bg-slate-100 text-slate-700 rounded-xl px-4 py-2 font-medium dark:border-slate-600 dark:hover:bg-slate-800 dark:text-slate-300"
+          >
+            <Target className="mr-2 h-4 w-4" />
+            Set Budget
+          </Button>
+          <Button
+            onClick={() => openExpenseModal()}
+            className="bg-teal-600 hover:bg-teal-700 text-white rounded-xl px-4 py-2 font-medium shadow-sm"
+          >
+            <Plus className="mr-2 h-4 w-4" />
+            Add Expense
+          </Button>
+        </div>
       </motion.div>
 
       <div className="space-y-6">
@@ -39,6 +55,11 @@ export default function DashboardPage() {
       </div>
 
       <ExpenseModal />
+      <BudgetModal
+        open={isBudgetModalOpen}
+        onOpenChange={setIsBudgetModalOpen}
+        onBudgetSaved={() => window.location.reload()}
+      />
     </div>
   );
 }

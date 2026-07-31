@@ -230,7 +230,11 @@ export function ExpenseModal() {
             <Button type="button" variant="outline" onClick={closeExpenseModal}>
               Cancel
             </Button>
-            <Button type="submit" disabled={isSubmitting}>
+            <Button 
+              type="submit" 
+              disabled={isSubmitting}
+              className="bg-teal-600 hover:bg-teal-700 text-white"
+            >
               {isSubmitting ? 'Saving...' : editingExpense ? 'Update' : 'Add'}
             </Button>
           </DialogFooter>
