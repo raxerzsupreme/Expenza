@@ -133,7 +133,7 @@ export default function CategoriesPage() {
             transition={{ duration: 0.3, delay: index * 0.05 }}
             whileHover={{ y: -5, transition: { duration: 0.2 } }}
           >
-            <Card className="relative overflow-hidden">
+            <Card className="theme-surface relative overflow-hidden">
               <div
                 className="absolute inset-x-0 top-0 h-2"
                 style={{ backgroundColor: category.color }}

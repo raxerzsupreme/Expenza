@@ -18,6 +18,7 @@ import {
 } from '@/components/ui/alert-dialog';
 import { Download, Upload, Trash2, Info, FileSpreadsheet } from 'lucide-react';
 import { useDatabase } from '@/hooks/useDatabase';
+import { ThemeSelector } from '@/components/ThemeSelector';
 import { motion } from 'motion/react';
 import * as XLSX from 'xlsx';
 
@@ -225,6 +226,17 @@ export default function SettingsPage() {
                 <p className="text-sm text-muted-foreground">Categories</p>
               </div>
             </div>
+          </CardContent>
+        </Card>
+
+        {/* Theme */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Theme</CardTitle>
+            <CardDescription>Choose how Expenza looks across the whole app</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ThemeSelector />
           </CardContent>
         </Card>
 

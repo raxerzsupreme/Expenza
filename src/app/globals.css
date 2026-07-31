@@ -132,24 +132,285 @@
   }
   html {
     @apply font-sans;
+    font-family: var(--app-font);
   }
   
   h1 {
+    font-family: var(--app-heading-font);
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     line-height: 1.2;
     letter-spacing: -0.02em;
   }
   h2 {
+    font-family: var(--app-heading-font);
     font-size: clamp(1.25rem, 3vw, 2rem);
     line-height: 1.3;
     letter-spacing: -0.01em;
   }
   h3 {
+    font-family: var(--app-heading-font);
     font-size: clamp(1.125rem, 2.5vw, 1.5rem);
     line-height: 1.4;
   }
   h4 {
+    font-family: var(--app-heading-font);
     font-size: clamp(1rem, 2vw, 1.25rem);
     line-height: 1.4;
   }
+}
+
+/* ---------- Theme system ---------- */
+:root {
+  --app-font: var(--font-geist-mono);
+  --app-heading-font: var(--font-geist-mono);
+}
+
+/* Dark fintech / crypto */
+[data-theme='fintech'] {
+  --background: #06080f;
+  --foreground: #e6edf3;
+  --card: #0b1220;
+  --card-foreground: #e6edf3;
+  --popover: #0b1220;
+  --popover-foreground: #e6edf3;
+  --primary: #00d4ff;
+  --primary-foreground: #04121a;
+  --secondary: #0f172a;
+  --secondary-foreground: #e6edf3;
+  --muted: #0f172a;
+  --muted-foreground: #8b98a9;
+  --accent: #101a2e;
+  --accent-foreground: #e6edf3;
+  --destructive: #f87171;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --border: #1b2b45;
+  --input: #1b2b45;
+  --ring: #00d4ff;
+  --chart-1: #00d4ff;
+  --chart-2: #10b981;
+  --chart-3: #a78bfa;
+  --chart-4: #f59e0b;
+  --chart-5: #f87171;
+  --radius: 0.625rem;
+  --sidebar: #0b1220;
+  --sidebar-foreground: #e6edf3;
+  --sidebar-primary: #00d4ff;
+  --sidebar-primary-foreground: #04121a;
+  --sidebar-accent: #0f172a;
+  --sidebar-accent-foreground: #e6edf3;
+  --sidebar-border: #1b2b45;
+  --sidebar-ring: #00d4ff;
+  --app-font: var(--font-display);
+  --app-heading-font: var(--font-display);
+}
+
+/* Elegant luxury */
+[data-theme='luxury'] {
+  --background: #f7f4ee;
+  --foreground: #1c1a17;
+  --card: #fffdf9;
+  --card-foreground: #1c1a17;
+  --popover: #fffdf9;
+  --popover-foreground: #1c1a17;
+  --primary: #a8892f;
+  --primary-foreground: #fffdf9;
+  --secondary: #efe9dc;
+  --secondary-foreground: #1c1a17;
+  --muted: #efe9dc;
+  --muted-foreground: #6b6257;
+  --accent: #e9e2d2;
+  --accent-foreground: #1c1a17;
+  --destructive: #9b2c2c;
+  --success: #5d7a3a;
+  --warning: #b08d3e;
+  --border: #ddd3c0;
+  --input: #ddd3c0;
+  --ring: #a8892f;
+  --chart-1: #a8892f;
+  --chart-2: #b58f45;
+  --chart-3: #8a6d3b;
+  --chart-4: #6b6257;
+  --chart-5: #c0a462;
+  --radius: 0.625rem;
+  --sidebar: #efe9dc;
+  --sidebar-foreground: #1c1a17;
+  --sidebar-primary: #a8892f;
+  --sidebar-primary-foreground: #fffdf9;
+  --sidebar-accent: #e2d8c2;
+  --sidebar-accent-foreground: #1c1a17;
+  --sidebar-border: #ddd3c0;
+  --sidebar-ring: #a8892f;
+  --app-font: var(--font-serif);
+  --app-heading-font: var(--font-serif);
+}
+
+/* Bold creative agency */
+[data-theme='agency'] {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a0a;
+  --primary: #0a0a0a;
+  --primary-foreground: #ffffff;
+  --secondary: #f4f4f4;
+  --secondary-foreground: #0a0a0a;
+  --muted: #f4f4f4;
+  --muted-foreground: #525252;
+  --accent: #ffd600;
+  --accent-foreground: #0a0a0a;
+  --destructive: #d81b1b;
+  --success: #19a974;
+  --warning: #f59e0b;
+  --border: #0a0a0a;
+  --input: #0a0a0a;
+  --ring: #0a0a0a;
+  --chart-1: #0a0a0a;
+  --chart-2: #ffd600;
+  --chart-3: #ff2d20;
+  --chart-4: #0077ff;
+  --chart-5: #19a974;
+  --radius: 0rem;
+  --sidebar: #f4f4f4;
+  --sidebar-foreground: #0a0a0a;
+  --sidebar-primary: #0a0a0a;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ffd600;
+  --sidebar-accent-foreground: #0a0a0a;
+  --sidebar-border: #0a0a0a;
+  --sidebar-ring: #0a0a0a;
+  --app-font: var(--font-display);
+  --app-heading-font: var(--font-display);
+}
+
+/* Fix hardcoded light borders on the dark fintech theme */
+[data-theme='fintech'] header {
+  border-color: rgba(27, 43, 69, 0.8);
+}
+[data-theme='fintech'] [class~='group/card'] {
+  border-color: #1b2b45;
+}
+
+/* ---------- Theme component utilities ---------- */
+
+/* Fintech: glassmorphism */
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* Theme-aware surface used on cards/boxes across the app */
+.theme-surface {
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-theme='fintech'] .theme-surface {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme='luxury'] .theme-surface {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.3));
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow:
+    0 8px 32px rgba(168, 137, 47, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+[data-theme='agency'] .theme-surface {
+  background: #ffffff;
+  border: 2px solid #0a0a0a;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 #0a0a0a;
+}
+
+.fintech-grid {
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.fintech-glow {
+  box-shadow: 0 0 60px rgba(0, 212, 255, 0.35);
+}
+
+/* Luxury: liquid glass */
+.liquid-glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.3));
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow:
+    0 8px 32px rgba(168, 137, 47, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.gold-text {
+  background: linear-gradient(120deg, #a8892f, #d9bc5f, #a8892f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Agency: brutalism */
+.brutal-card {
+  background: #ffffff;
+  border: 2px solid #0a0a0a;
+  border-radius: 0;
+  box-shadow: 5px 5px 0 #0a0a0a;
+}
+
+.brutal-card-black {
+  background: #0a0a0a;
+  border: 2px solid #0a0a0a;
+  border-radius: 0;
+  box-shadow: 5px 5px 0 #ffd600;
+}
+
+.brutal-chip {
+  background: #ffd600;
+  color: #0a0a0a;
+  border: 2px solid #0a0a0a;
+  border-radius: 0;
+  font-weight: 700;
+}
+
+/* Marquee ticker */
+@keyframes expenza-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: expenza-marquee 28s linear infinite;
+}
+
+@keyframes expenza-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: expenza-float 5s ease-in-out infinite;
 }
