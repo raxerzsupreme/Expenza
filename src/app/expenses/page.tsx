@@ -88,7 +88,10 @@ export default function ExpensesPage() {
             {filteredExpenses.length} expenses · ${totalFiltered.toFixed(2)} total
           </p>
         </div>
-        <Button onClick={() => openExpenseModal()}>
+        <Button 
+          onClick={() => openExpenseModal()}
+          className="bg-teal-600 hover:bg-teal-700 text-white rounded-xl px-4 py-2 font-medium shadow-sm"
+        >
           <Plus className="mr-2 h-4 w-4" />
           Add Expense
         </Button>
