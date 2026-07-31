@@ -75,11 +75,16 @@ export default function ExpensesPage() {
   const totalFiltered = filteredExpenses.reduce((sum, e) => sum + e.amount, 0);
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="mb-8 flex items-center justify-between">
+    <div className="container mx-auto px-4 sm:px-6 py-8 max-w-6xl">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+      >
         <div>
-          <h1 className="text-3xl font-bold">Expenses</h1>
-          <p className="text-muted-foreground">
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Expenses</h1>
+          <p className="text-muted-foreground text-sm sm:text-base">
             {filteredExpenses.length} expenses · ${totalFiltered.toFixed(2)} total
           </p>
         </div>
@@ -87,7 +92,7 @@ export default function ExpensesPage() {
           <Plus className="mr-2 h-4 w-4" />
           Add Expense
         </Button>
-      </div>
+      </motion.div>
 
       {/* Filters */}
       <div className="mb-6 flex flex-col gap-4 sm:flex-row">

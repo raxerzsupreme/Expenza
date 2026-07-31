@@ -1,12 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import { Wallet, BarChart3, Tags, Download, ArrowRight, Sparkles } from 'lucide-react';
+import Image from 'next/image';
+import { BarChart3, Tags, Download, ArrowRight, Sparkles, Receipt } from 'lucide-react';
 import { motion } from 'motion/react';
 
 const features = [
   {
-    icon: Wallet,
+    icon: Receipt,
     title: 'Track Every Expense',
     description: 'Log expenses in seconds with a clean, intuitive interface. Categorize and add notes for complete records.',
   },
@@ -198,7 +199,14 @@ export default function LandingPage() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <div className="flex items-center gap-2 font-semibold text-sm">
-              <Wallet className="h-4 w-4 text-primary" />
+              <div className="relative h-5 w-5">
+                <Image
+                  src="/logo.svg"
+                  alt="Expenza Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
               Expenza
             </div>
             <p className="text-xs text-muted-foreground">

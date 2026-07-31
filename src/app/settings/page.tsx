@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { useAppStore } from '@/lib/store';
 import { db } from '@/lib/db';
 import { Button } from '@/components/ui/button';
@@ -15,8 +16,9 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog';
-import { Download, Upload, Trash2, Wallet, Info, FileSpreadsheet } from 'lucide-react';
+import { Download, Upload, Trash2, Info, FileSpreadsheet } from 'lucide-react';
 import { useDatabase } from '@/hooks/useDatabase';
+import { motion } from 'motion/react';
 import * as XLSX from 'xlsx';
 
 export default function SettingsPage() {
@@ -166,21 +168,31 @@ export default function SettingsPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold">Settings</h1>
-        <p className="text-muted-foreground">
+    <div className="container mx-auto px-4 sm:px-6 py-8 max-w-6xl">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        className="mb-8"
+      >
+        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Settings</h1>
+        <p className="text-muted-foreground text-sm sm:text-base">
           Manage your data and preferences.
         </p>
-      </div>
+      </motion.div>
 
       <div className="grid gap-6">
         {/* App Info */}
         <Card>
           <CardHeader>
             <div className="flex items-center gap-3">
-              <div className="rounded-md bg-secondary p-2">
-                <Wallet className="h-5 w-5 text-primary" />
+              <div className="relative h-10 w-10">
+                <Image
+                  src="/logo.svg"
+                  alt="Expenza Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <div>
                 <CardTitle>Expenza</CardTitle>
