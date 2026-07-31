@@ -63,13 +63,14 @@ export function DashboardStats() {
   ];
 
   return (
-    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
       {cards.map((card, index) => (
         <motion.div
           key={card.title}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: index * 0.05 }}
+          whileHover={{ y: -2, transition: { duration: 0.2 } }}
         >
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

@@ -104,11 +104,16 @@ export default function CategoriesPage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="mb-8 flex items-center justify-between">
+    <div className="container mx-auto px-4 sm:px-6 py-8 max-w-6xl">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        className="mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+      >
         <div>
-          <h1 className="text-3xl font-bold">Categories</h1>
-          <p className="text-muted-foreground">
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Categories</h1>
+          <p className="text-muted-foreground text-sm sm:text-base">
             Manage your expense categories and budgets.
           </p>
         </div>
@@ -116,7 +121,7 @@ export default function CategoriesPage() {
           <Plus className="mr-2 h-4 w-4" />
           Add Category
         </Button>
-      </div>
+      </motion.div>
 
       {/* Categories Grid */}
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

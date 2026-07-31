@@ -18,14 +18,14 @@ export const db = new ExpenzaDatabase();
 
 // Default categories
 export const defaultCategories: Omit<Category, 'id' | 'createdAt'>[] = [
-  { name: 'Food & Dining', icon: 'UtensilsCrossed', color: '#6366f1' },
-  { name: 'Transport', icon: 'Car', color: '#8b5cf6' },
-  { name: 'Bills & Utilities', icon: 'Receipt', color: '#a78bfa' },
-  { name: 'Shopping', icon: 'ShoppingBag', color: '#c084fc' },
-  { name: 'Entertainment', icon: 'Gamepad2', color: '#e879f9' },
-  { name: 'Health & Fitness', icon: 'Heart', color: '#f472b6' },
-  { name: 'Education', icon: 'GraduationCap', color: '#fb7185' },
-  { name: 'Other', icon: 'MoreHorizontal', color: '#94a3b8' },
+  { name: 'Food & Dining', icon: 'UtensilsCrossed', color: '#f97316' },
+  { name: 'Transport', icon: 'Car', color: '#3b82f6' },
+  { name: 'Bills & Utilities', icon: 'Receipt', color: '#8b5cf6' },
+  { name: 'Shopping', icon: 'ShoppingBag', color: '#ec4899' },
+  { name: 'Entertainment', icon: 'Gamepad2', color: '#ef4444' },
+  { name: 'Health & Fitness', icon: 'Heart', color: '#22c55e' },
+  { name: 'Education', icon: 'GraduationCap', color: '#0D9488' },
+  { name: 'Other', icon: 'MoreHorizontal', color: '#64748b' },
 ];
 
 // Seed default categories if empty

@@ -68,7 +68,7 @@ export function SpendingCharts() {
   const totalSpent = categoryData.reduce((sum, item) => sum + item.value, 0);
 
   return (
-    <div className="grid gap-4 md:grid-cols-2">
+    <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
       {/* Category Breakdown */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}

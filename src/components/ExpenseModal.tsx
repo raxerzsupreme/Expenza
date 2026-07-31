@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useAppStore } from '@/lib/store';
 import { useDatabase } from '@/hooks/useDatabase';
+import { suggestCategory } from '@/lib/classifier';
 import {
   Dialog,
   DialogContent,
@@ -21,7 +22,7 @@ import {
 } from '@/components/ui/select';
 import { Calendar } from '@/components/ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { CalendarIcon } from 'lucide-react';
+import { CalendarIcon, Sparkles } from 'lucide-react';
 import { format } from 'date-fns';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'motion/react';
@@ -35,6 +36,7 @@ export function ExpenseModal() {
   const [date, setDate] = useState<Date>(new Date());
   const [note, setNote] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [suggestedCategory, setSuggestedCategory] = useState<string | null>(null);
 
   const selectedCategory = categories.find((c) => c.id?.toString() === categoryId);
 
@@ -44,13 +46,30 @@ export function ExpenseModal() {
       setCategoryId(editingExpense.categoryId.toString());
       setDate(new Date(editingExpense.date));
       setNote(editingExpense.note || '');
+      setSuggestedCategory(null);
     } else {
       setAmount('');
       setCategoryId(categories[0]?.id?.toString() || '');
       setDate(new Date());
       setNote('');
+      setSuggestedCategory(null);
     }
   }, [editingExpense, categories]);
+
+  const handleNoteChange = useCallback(
+    (value: string) => {
+      setNote(value);
+
+      if (!editingExpense && value.trim().length > 0) {
+        const suggested = suggestCategory(value, categories);
+        if (suggested && suggested.id?.toString() !== categoryId) {
+          setCategoryId(suggested.id!.toString());
+          setSuggestedCategory(suggested.name);
+        }
+      }
+    },
+    [editingExpense, categories, categoryId]
+  );
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -193,8 +212,18 @@ export function ExpenseModal() {
                 id="note"
                 placeholder="What was this expense for?"
                 value={note}
-                onChange={(e) => setNote(e.target.value)}
+                onChange={(e) => handleNoteChange(e.target.value)}
               />
+              {suggestedCategory && (
+                <motion.div
+                  initial={{ opacity: 0, y: -5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-center gap-1.5 text-xs text-primary"
+                >
+                  <Sparkles className="h-3 w-3" />
+                  Auto-classified as {suggestedCategory}
+                </motion.div>
+              )}
             </motion.div>
           </motion.div>
           <DialogFooter>
