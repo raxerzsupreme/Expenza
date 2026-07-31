@@ -59,14 +59,14 @@ export default function SettingsPage() {
       const category = categories.find((c) => c.id === e.categoryId);
       return {
         Date: new Date(e.date).toLocaleDateString(),
-        Amount: e.amount,
+        Amount: Number(e.amount) || 0,
         Category: category?.name || 'Unknown',
         Note: e.note || '',
       };
     });
     const wsExpenses = XLSX.utils.json_to_sheet(expenseData);
     
-    // Set column widths for expenses
+    // Set column widths and number format for expenses
     wsExpenses['!cols'] = [
       { wch: 12 }, // Date
       { wch: 10 }, // Amount
@@ -79,7 +79,7 @@ export default function SettingsPage() {
     const categoryData = categories.map((c) => ({
       Name: c.name,
       Color: c.color,
-      Budget: c.budget || 0,
+      Budget: Number(c.budget) || 0,
     }));
     const wsCategories = XLSX.utils.json_to_sheet(categoryData);
     
@@ -92,8 +92,8 @@ export default function SettingsPage() {
     XLSX.utils.book_append_sheet(wb, wsCategories, 'Categories');
 
     // Summary sheet
-    const totalExpenses = expenses.reduce((sum, e) => sum + e.amount, 0);
-    const totalBudget = categories.reduce((sum, c) => sum + (c.budget || 0), 0);
+    const totalExpenses = expenses.reduce((sum, e) => sum + (Number(e.amount) || 0), 0);
+    const totalBudget = categories.reduce((sum, c) => sum + (Number(c.budget) || 0), 0);
     const summaryData = [
       { Metric: 'Total Expenses', Value: totalExpenses },
       { Metric: 'Total Budget', Value: totalBudget },

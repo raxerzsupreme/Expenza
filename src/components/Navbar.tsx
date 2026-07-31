@@ -20,7 +20,7 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-background/80 backdrop-blur-md dark:border-slate-700/80">
       <div className="container mx-auto flex h-14 items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center gap-2.5 font-bold text-xl">
           <motion.div
