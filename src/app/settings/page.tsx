@@ -189,7 +189,7 @@ export default function SettingsPage() {
             <div className="flex items-center gap-3">
               <div className="relative h-10 w-10">
                 <Image
-                  src="/logo.svg"
+                  src="/expenza.png"
                   alt="Expenza Logo"
                   fill
                   className="object-contain"

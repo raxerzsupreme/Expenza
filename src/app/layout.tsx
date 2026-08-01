@@ -28,6 +28,10 @@ const display = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Expenza - Expense Tracker",
   description: "Track your expenses, visualize spending, and manage your finances with Expenza.",
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({

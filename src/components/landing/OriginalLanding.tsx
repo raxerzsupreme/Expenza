@@ -201,7 +201,7 @@ export function OriginalLanding() {
             <div className="flex items-center gap-2 font-semibold text-sm">
               <div className="relative h-5 w-5">
                 <Image
-                  src="/logo.svg"
+                  src="/expenza.png"
                   alt="Expenza Logo"
                   fill
                   className="object-contain"

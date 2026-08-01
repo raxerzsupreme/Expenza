@@ -29,7 +29,7 @@ export function Navbar() {
             className="relative h-8 w-8"
           >
             <Image
-              src="/logo.svg"
+              src="/expenza.png"
               alt="Expenza Logo"
               fill
               className="object-contain"
